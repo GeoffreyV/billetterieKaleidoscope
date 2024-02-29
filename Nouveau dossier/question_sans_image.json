@@ -1,0 +1,139 @@
+[
+    {
+    "question": "Il y a cet oiseau de feu qui brille un peu plus que les autres. Tu voudrais tenter ta parade de séduction la plus rodée, la plus douce, la plus sucrée. Tu approches en roucoulant...",
+    "answers": [
+      {
+        "id": "conversation",
+        "text": "Iel est en grande conversation - ce n'est apparemment pas le moment. Tu ranges prestement tes plumes et tu gardes ton panache."
+      },
+      {
+        "id": "ballet",
+        "text": "Iel te rejoint dans ton roucoulement suave, et c'est digne d'un ballet céleste"
+      },
+      {
+        "id": "lumiere",
+        "text": "Iel te regarde l'air amusé, mais pas conquis. Tu acceptes son non et tout va bien."
+      }
+    ]
+  },
+    {
+        "question": "Kahina vient saluer. Ses scènes n'étaient vraiment pas ce que tu as vu de plus fou",
+        "answers": [
+        {
+            "id": "applaudis",
+            "text": "Tu l'applaudis à qui mieux mieux"
+        },
+        {
+            "id": "pasfou",
+            "text": "Pour 1 scène géniale, il y en a des dizaines qui sont pas zinzins, ainsi va la vie et nous apprenons !"
+        },
+        {
+            "id": "mieux",
+            "text": "Ca sera d'office mieux la prochaine fois !"
+        }
+        ]
+    },
+    {
+        "question": "Au plein milieu d'une impro, ton partenaire de scène a un grand trou et n'arrive plus rien à dire",
+        "answers": [
+        {
+            "id": "germain",
+            "text": "'ALORS MONSIEUR GERMAIN ! C'EST L'HEURE DE VOTRE SOIN DES PIEDS !' puis tu l'aides doucement à sortir de scène"
+        },
+        {
+            "id": "silence",
+            "text": "Le silence est d'or, tu prends conscience du vent dans les arbres au dessus de la scène, et, contre toute cohérence, tu deviens le faune que tu as toujours rêvé d'incarner"
+        },
+        {
+            "id": "arret",
+            "text": "Tu arrêtes la scène et demande si tout va bien"
+        }
+        ]
+    },
+    {
+        "question": "Oh ! Un morceau de plastique est bloqué dans une branche basse, offrant son ventre rond et transparent au vent, menaçant de poursuivre sa route à chaque instant.",
+        "answers": [
+        {
+            "id": "poubelle",
+            "text": "Tu le ramasses et le mets dans ta poche pour la prochaine poubelle"
+        },
+        {
+            "id": "envie",
+            "text": "Tu le ramasses et l'envies aussi, un peu, de pouvoir voler si facilement"
+        },
+        {
+            "id": "semblables",
+            "text": "Tu le ramasses, ainsi que tous ses semblables"
+        }
+    ]
+    },
+    {
+        "question": "Une assiette sale traine sur ta table que tu t'appretes à quitter",
+        "answers": [
+        {
+            "id": "laves",
+            "text": "Bonne pate, tu la prends et la laves, sans même marmonner"
+        },
+        {
+            "id": "regard",
+            "text": "Tu jettes un regard autour de toi, et, bonne pate, tu la prends et la laves"
+        },
+        {
+            "id": "amour",
+            "text": "La vie des assiettes est peut etre plus dure que la vie des humains. Tu la prends et la laves avec amour"
+        }
+    ]
+    },
+    {
+        "question": "Eloi marche avec difficulté, trois piles de gobelets propres dans les bras.",
+        "answers": [
+        {
+            "id": "accoures",
+            "text": "Tu accoures et lui propose ton aide"
+        },
+        {
+            "id": "cirque",
+            "text": "Tu proposes ton aide et ça déclenche ta carrière internationale dans le cirque."
+        },
+        {
+            "id": "toulouse",
+            "text": "Tu proposes ton aide. 2027 toulouse,  2041 madrid."
+        }
+    ]
+    },
+    {
+        "question": "Tu regardes une scène, il y a un propos hyper raciste qui est dit",
+        "answers": [
+        {
+            "id": "parler",
+            "text": "Ca te met mal à l'aise. A la fin de la scène, toi ou quelqu'un.e propose d'en parler."
+        },
+        {
+            "id": "confiance",
+            "text": "Ca te met mal à l'aise mais tu ne t'en rends compte que plus tard. Tu en parles avec une personne en qui tu as confiance (animateurice, ange gardien, ami.e...) et la situation tente d.être détricotée"
+        },
+        {
+            "id": "racistes",
+            "text": "Ca te met pas spécialement mal à l'aise. il y a des racistes dans le monde, il faut aussi les représenter. mais ça vaut peut etre quand même le coup d'en parler à la fin. tu proposes un moment pour en parler."
+        }
+    ]
+    },
+    {
+        "question": "Il y a une personne un peu reloue qui te fait tout le temps des remarques nulles du style. ou juste reloues.",
+        "answers": [
+        {
+            "id": "dis",
+            "text": "Tu lui dis. iel arrête."
+        },
+        {
+            "id": "aide",
+            "text": "Tu lui dis. Iel arrête pas. Tu vas chercher l'aide des anges gardien.ne.s, qui sont chargées de prendre ce genre de situation en main"
+        },
+        {
+            "id": "gardien",
+            "text": "Tu ne lui dis pas.  Tu vas chercher l'aide des anges gardien.ne.s, qui sont chargées de prendre ce genre de situation en main"
+        }
+    ]
+    }
+]
+   

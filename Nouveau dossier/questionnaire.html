@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slider/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Acheter mon billet</h2>
+        <div class="row">
+            <div id="slider-container" style="display: none;">
+                <h5>Un festival à prix libre et conscient</h5>
+                <div id="open-price-presentation">
+                    <p>En attendant de pouvoir prendre ton billet, ce curseur donne une idée de combien nous avons
+                        besoin pour faire vivre le festival.</p>
+                </div>
+                <div class="circlebase h5" id="buble"><span id="bubleText" contenteditable="true">140</span><span
+                        id="bubleEuro">€</span></div>
+                <div id="range-container" class="col-12">
+                    <input type="range" min="95" max="250" value="165" class="slider" id="myRange">
+                </div>
+                <div class="explication" id="prices-explanation"></div>
+
+                <div style="float:right" id="buttons-to-tickets">
+                    <button type="button" class="btn btn-primary" id="ticket-button" onclick="nextPrev(1)">Ouvrir la
+                        billetterie</button>
+                </div>
+            </div>
+        </div>
+        <div id="preamble" class="row" style="display: none;">
+            <h4>Quelques questions pour décrire nos valeurs</h4>
+            <div class="col-12" id="briefing-questions">
+                Avant de t'inscrire au festival, nous te proposons ce questionnaire sans mauvaise réponse visant à
+                t'informer sur les valeurs du festival et à s'assurer que nous les partageons. <br />
+                Il est inspiré par ceux que l’on retrouve lors de l’inscription à certains festivals (BurningMan,
+                Coucool…). <br />
+            </div>
+            <div style="float:right" id="button-container">
+                <button type="button" class="btn btn-primary" id="next-button" onclick="nextPrev(1)">Je répond au
+                    questionnaire !</button>
+            </div>
+        </div>
+        <div id="questionnaire-div">
+            <form id="form">
+
+                <div class="question-container" id="questions-container">
+                </div>
+
+                <div id="error-message" class="hidden"></div>
+                <div style="float:right" id="button-container">
+                    <button type="button" class="btn btn-primary" id="next-button"
+                        onclick="nextPrev(1)">Suivant</button>
+                </div>
+
+            </form>
+        </div>
+
+
+        <div class="row g-2 nodisplay" id="choix-impro-non-impro">
+            <div class="col-6">
+                <button id="impro" class="btn btn-outline-primary" onclick="showImpro()">Improvisateur·ice</button>
+            </div>
+            <div class="col-6">
+                <button id="non-impro" class="btn btn-outline-primary" onclick="showNonImpro()">Non
+                    improvisateur·ice</button>
+            </div>
+            <div class="col12">
+                <span class="text-center" id="titre-billetterie"></span>
+            </div>
+            <div class="col12" id="billetterie">
+                <!--
+                   <iframe id="haWidget-impro" allowtransparency="true" scrolling="auto"
+                        src="https://www.helloasso.com/associations/l-impro-est-rare/evenements/kaleidoscope-improvisateurice-2024/widget"
+                        style="width: 100%; height: 750px; border: none;" class="nodisplay"></iframe>
+                </div>
+                <div class="col12">
+                    <iframe id="haWidget-non-impro" allowtransparency="true" scrolling="auto"
+                        src="https://www.helloasso.com/associations/l-impro-est-rare/evenements/kaleidoscope-non-improvisateurice-2024/widget"
+                        style="width: 100%; height: 750px; border: none;" class="nodisplay"></iframe>
+                </div>
+                <div class="col">
+                    <button id="retour" class="nodisplay btn btn-outline-secondary"
+                        onclick="backToChoice()">Retour</button>
+                -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="Slider.js"></script>
+    <script src="Questionnaire.js"></script>
+    <script src="TicketProcess.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

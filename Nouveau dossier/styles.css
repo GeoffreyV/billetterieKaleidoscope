@@ -1,0 +1,56 @@
+/* Classe pour inverser l'ordre des éléments alternativement */
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Style des réponses */
+.answer {
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+
+.answer {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    align-items: stretch; /* Alignement vertical au centre */
+}
+
+
+
+.btn:hover img, .btn:active img, .btn:focus img{
+    transform: scale(1.5);
+}
+
+/* Style des images dans les réponses */
+.answer img {
+    max-width: 100px; /* Largeur des images */
+    max-height: 100px; /* Hauteur des images */
+    margin-right: 10px; /* Marge à droite des images */
+    vertical-align: center; /* Alignement vertical au centre */
+}
+
+/* Style du texte dans les réponses */
+.answer span {
+    flex-grow: 1; /* Permet au texte de prendre autant d'espace que possible */
+}
+
+#next-button, #submit-button {
+    float: right;
+}
+
+/* Retirer le fond bleu sur le focus, active et hover */
+btn-check-perso:focus, .btn-check-perso:active, .btn-check-perso:hover{
+    background-color: #fff;
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-check-perso {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    text-align: left; /* Alignement du texte à gauche */
+    width: 100%;
+    align-items: center; /* Alignement vertical au centre */
+}
+
+.nodisplay {
+    display: none;
+}
