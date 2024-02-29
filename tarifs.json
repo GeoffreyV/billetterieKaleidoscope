@@ -1,0 +1,49 @@
+{
+    "tarifs": [
+        {
+            "id": "solidaire",
+            "name": "Tarif solidaire",
+            "description": "Notre tarif solidaire est réservé à ciels qui ont du mal à boucler les fin de mois. Il est limité en nombre pour la survie du festival.",
+            "price": 95,
+            "min": 95,
+            "max": 95,
+            "color": "#DC143C"
+        },
+        {
+            "id": "faible",
+            "name": "Tarif réduit",
+            "description": "On te laisse la possibilité de payer moins que nos besoins, même si cela ne permettra pas de couvrir tous les frais engagés pour toi.",
+            "price": 150,
+            "min": 115,
+            "max": 164,
+            "color": "#FF7F50"
+        },
+        {
+            "id": "moyen",
+            "name": "Tarif normal",
+            "description": "C’est le tarif moyen minimal dont on a besoin pour que le festival puisse avoir lieu.",
+            "price": 175,
+            "min": 165,
+            "max": 179,
+            "color": "#72aadd"
+        },
+        {
+            "id": "haut",
+            "name": "Tarif soutien",
+            "description": "Si tu as les moyens, tu peux choisir de payer un peu plus pour soutenir le festival et permettre à d’autres de venir.",
+            "price": 190,
+            "min": 180,
+            "max": 199,
+            "color": "#32CD32"
+        },
+        {
+            "id": "fabuleux",
+            "name": "Tarif bienfaiteur",
+            "description": "C’est généreux ! Merci pour le soutien ! c'est grâce à toi que l'on peut proposer des prix libres.",
+            "price": 215,
+            "min": 200,
+            "max": 250,
+            "color": "#00FF00"
+        }
+    ]
+}
