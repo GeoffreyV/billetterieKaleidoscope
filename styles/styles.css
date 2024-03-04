@@ -8,13 +8,39 @@
     margin-bottom: 10px; /* Marge inférieure */
 }
 
+.title-container {
+    /*display: flex;*/
+    align-items: center;
+}
 
+#ticketing-choice{
+        display: flex;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px; /* This ensures the space is distributed over the full height of the container */
+}
+
+#back-to-other {
+    margin-left: auto;
+}
 .answer {
     display: flex; /* Utilisation de flexbox pour aligner les éléments */
     align-items: stretch; /* Alignement vertical au centre */
 }
 
+.btn-choix-impro{
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    align-items: center; /* Alignement vertical au centre */
+    justify-content: center; /* Alignement horizontal au centre */
+    text-align: center; /* Alignement du texte au centre */
+    width: 100%; /* Largeur de 100% */
+    margin-bottom: 10px; /* Marge inférieure */
 
+}
 
 .btn:hover img, .btn:active img, .btn:focus img{
     transform: scale(1.5);

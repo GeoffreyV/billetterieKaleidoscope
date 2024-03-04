@@ -122,24 +122,24 @@
 
 
 
+
 input[type="range"]::-webkit-slider-runnable-track {
     -webkit-appearance: none;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px 5px gainsboro;
-    background: #4776e6;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right,
-            #8e54e9,
-            #4776e6);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right,
-            #8e54e9,
-            #4776e6);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 7.5px;
+    background: rgba(59, 173, 227, 1);
+    background: -webkit-gradient(linear, left bottom, right top,
+            color-stop(0%, var(--color1)),
+            color-stop(30%, var(--color2)),
+            color-stop(51%, var(--color3)),
+            color-stop(80%, var(--color4)),
+            color-stop(100%, var(--color5)));
+    background: -webkit-linear-gradient(45deg,
+            var(--color1) 0%,
+            var(--color2) 30%,
+            var(--color3) 51%,
+            var(--color4) 80%,
+            var(--color5) 100%);
+    height: 2px;
 }
-
-
 
 input[type="range"]::-moz-range-track {
     -moz-appearance: none;
@@ -226,14 +226,28 @@ input[type="range"] {
     border: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+/*input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: var(--thumb-width);
     height: var(--thumb-height);
     background: var(--thumb-color);
     transition: background 0.3s ease-in-out;
+}*/
+
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+    margin-top: -6px;
+    border-radius: 50%;
+    background: var(--thumb-color);
+    transition: background 0.2s ease-in-out;
+    /*border : none;*/
+    -webkit-appearance: none; /* This is necessary for Chrome */
+    border : 1px solid;
 }
+
 
 input[type="range"]::-moz-range-thumb {
     width: 14px;
@@ -359,7 +373,9 @@ input[type="range"]::-moz-range-thumb {
 
 }
 
-.explication {}
+.explication {
+    height: 10px;
+}
 
 .in {
     transition: opacity 0.3s;

@@ -13,10 +13,11 @@ class Slider {
         this.prefixUrl = prefixUrl;
         this.jsonFileName = jsonFileName;
         this.$bubleEuro = $('#bubleEuro');
-        this.buble = this.$parentContainer.find('#buble');
-        this.buble.bubleText = this.$parentContainer.find('#bubleText');
+        this.bubble = this.$parentContainer.find('#buble');
+        this.bubble.bubleText = this.$parentContainer.find('#bubleText');
         this.$explanationDiv = this.$parentContainer.find('#prices-explanation');
         this.$slider = this.$parentContainer.find('#myRange');
+        this.$buttonToTickets = this.$parentContainer.find('#buttons-to-tickets');
         this.thumbWidth = 14;
 
 
@@ -66,8 +67,9 @@ class Slider {
             this.updatePrice(this.$slider.val());
         });
         this.$explanationDiv.append(this.$explanationsArray);
-        this.updatePrice(175);
         this.$parentContainer.fadeIn('fast');
+        this.updatePrice(175);
+        
 
 
     }
@@ -115,7 +117,7 @@ class Slider {
             const maxPeriod = 5;
             const animationDuration = ((value - minValue) * (minPeriod - maxPeriod) / (maxValue - minValue) + maxPeriod) + 's';
 
-            this.buble.css('animation-duration', animationDuration);
+            this.bubble.css('animation-duration', animationDuration);
 
 
 
@@ -132,12 +134,12 @@ class Slider {
     }
 
     loveAnimation() {
-        let originalWidth = this.buble.width();
-        let originalHeight = this.buble.height();
+        let originalWidth = this.bubble.width();
+        let originalHeight = this.bubble.height();
         $('#bubleEuro').fadeOut('slow');
-        this.buble.bubleText.fadeTo('slow', 0, () => {
-            this.buble.bubleText.text('Love You');
-            this.buble.bubleText.fadeTo('slow', 1);
+        this.bubble.bubleText.fadeTo('slow', 0, () => {
+            this.bubble.bubleText.text('Love You');
+            this.bubble.bubleText.fadeTo('slow', 1);
             /*this.buble.animate({
                 left: this.$slider.width() / 2 - this.buble.width() / 2,
             }, 500,  () => {
@@ -160,24 +162,24 @@ class Slider {
 
     turnOffLoveAnimation() {
         
-        this.buble.classList.remove('flyAndBurst');
-        this.buble.classList.remove('animate');
+        this.bubble.classList.remove('flyAndBurst');
+        this.bubble.classList.remove('animate');
         this.$explanationDiv.fadeTo('fast', 1);
         this.$slider.fadeTo('fast', 1);
     }
 
     addSparkle() {
-        this.buble.addClass('sparkle');
+        this.bubble.addClass('sparkle');
     }
 
     removeSparkle() {
-        this.buble.removeClass('sparkle');
+        this.bubble.removeClass('sparkle');
     }
 
     updateBuble(color) {
         this.moveBuble();
         this.changeBubleColor(color);
-        this.buble.bubleText.text(this.$slider.val());
+        this.bubble.bubleText.text(this.$slider.val());
     }
 
     moveBuble() {
@@ -185,16 +187,16 @@ class Slider {
         const sliderOffset = -this.thumbWidth * sliderValueRatio + this.thumbWidth / 2;
         const thumbCenter = sliderValueRatio * this.$slider.width() + sliderOffset;
 
-        const leftPosition = thumbCenter - this.buble.width() / 2;
-        this.buble.stop();
-        this.buble.animate({ left: leftPosition + 'px' });
+        const leftPosition = thumbCenter - this.bubble.width() / 2;
+        this.bubble.stop();
+        this.bubble.animate({ left: leftPosition + 'px' });
     }
 
     changeBubleColor(color) {
-        this.buble.css('color', 'rgb(' + color.join(', ') + ')');
-        this.buble.css('--red', color[0]);
-        this.buble.css('--green', color[1]);
-        this.buble.css('--blue', color[2]);
+        this.bubble.css('color', 'rgb(' + color.join(', ') + ')');
+        this.bubble.css('--red', color[0]);
+        this.bubble.css('--green', color[1]);
+        this.bubble.css('--blue', color[2]);
     }
 
     updateThumbColor() {
@@ -223,6 +225,35 @@ class Slider {
         this.$slider.css('--thumb-color', 'rgb(' + thumbColor.join(',') + ')');
         return thumbColor;
     }
+
+    reduce(){
+        this.bubble.hide();
+        $("buttons-to-tickets").hide();
+        this.$explanationDiv.css({
+            'height': '100px',
+            'overflow': 'hidden',
+        })
+        this.$buttonToTickets.hide();
+
+    }
+
+    fadeOut(...args) {
+        this.$parentContainer.fadeOut.apply(this.$parentContainer, args);
+    }
+
+    fadeIn(...args) {
+        this.$parentContainer.fadeIn.apply(this.$parentContainer, args);
+    }
+
+    slideDown(...args) {
+        this.$parentContainer.slideDown.apply(this.$parentContainer, args);
+    }
+
+    slideUp(...args) {
+        this.$parentContainer.slideUp.apply(this.$parentContainer, args);
+    }
+
+
 
 
 

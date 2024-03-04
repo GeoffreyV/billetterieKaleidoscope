@@ -12,20 +12,30 @@ const titreBilletterie = document.getElementById('titre-billetterie');
 const billetterie = document.getElementById('billetterie');
 
 
+
 // Slider
-const slider = new Slider('', 'tarifs.json', 'slider-container');
-const ticketQuestionnaire = new Questionnaire('', 'question_sans_image.json', $('#questions-container'));
-const ticketProcess = new TicketProcess(ticketQuestionnaire, $sliderContainer, $('#billetterie'), $('#preamble'), $('#questionnaire-div'));
+const slider = new Slider('json/', 'tarifs.json', 'slider-container');
+const ticketQuestionnaire = new Questionnaire('json/', 'question_sans_image.json', $('#questions-container'));
+const ticketing = new Ticketing($('#ticketing-container'), $('.ticketing'), $('#ticketing-choice'));
+const ticketProcess = new TicketProcess(ticketQuestionnaire, slider, ticketing, $('#preamble'), $('#questionnaire-div'));
 
 slider.initialize();
+ticketing.init();
 ticketProcess.initialize();
 
+$('#activate-impro').click(function(e) {
+    e.preventDefault(); // Prevent the default action of the link
+    $('#btnradio1').prop('checked', true); // Check the radio button
+    showImpro();
+});
+
+$('#activate-non-impro').click(function(e) {
+    e.preventDefault(); // Prevent the default action of the link
+    $('#btnradio2').prop('checked', true); // Check the radio button
+    showNonImpro();
+});
 
 
-// Display the slider
-function displaySlider() {
-    $sliderContainer.fadeIn('fast');
-}
 
 
 // Display the questions from the second question onwards
@@ -41,41 +51,31 @@ function hideQuestions() {
     questionsSection.style.display = 'none';
 }
 
-displaySlider();
-
 
 let currentPage = 0;
 
 function nextPrev(stepToNextPage) {
-    ticketProcess.event(TicketProcess.Transitions.GO_FORWARD);
+    if(stepToNextPage === 1) {
+        ticketProcess.event(TicketProcess.Transitions.GO_FORWARD);
+    }
+    else {
+        ticketProcess.event(TicketProcess.Transitions.GO_BACKWARD);
+    }  
 
 }
 
-
-
-
-
-
-
-
 function showImpro() {
-    billetterieImpro.classList.remove('nodisplay');
-    billetterieNonImpro.classList.add('nodisplay');
-    nonImproButton.classList.add('nodisplay');
-    improButton.classList.add('nodisplay');
-    titreBilletterie.textContent = ' Improvisteurices';
-    retourButton.classList.remove('nodisplay');
-
+    $('#ticket-type').text('Billetterie Improvisateurices')
+    $('#back-to-other').text('Vers la billetterie non-improvisateurices');
+    $('#back-to-other').attr('onclick', 'showNonImpro()');
+    ticketing.showTicketing(0);
 }
 
 function showNonImpro() {
-    billetterieNonImpro.classList.remove('nodisplay');
-    billetterieImpro.classList.add('nodisplay');
-    nonImproButton.classList.add('nodisplay');
-    improButton.classList.add('nodisplay');
-    retourButton.classList.remove('nodisplay');
-
-    titreBilletterie.textContent = 'Vous êtes sur la billetterie Non-Improvistaeurices';
+    $('#ticket-type').text('Billetterie Non-Improvisateurices');
+    $('#back-to-other').text('Vers la billetterie improvisateurices');
+    $('#back-to-other').attr('onclick', 'showImpro()');
+    ticketing.showTicketing(1);
 }
 
 function backToChoice() {

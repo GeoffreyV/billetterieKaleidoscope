@@ -30,11 +30,12 @@ class ProgressBar {
 class Questionnaire {
     constructor(prefixUrl, jsonFileName, $questionnaireContainer) {
         this._prefixUrl = prefixUrl;
-        this._jsonFileName = jsonFileName;
+        this._jsonFileName = prefixUrl + jsonFileName;
         this.$questions = [];
         this._currentQuestionIndex = 0;
         this.$questionnaireContainer = $questionnaireContainer;
         this.progressBar = new ProgressBar($questionnaireContainer); // Instanciation de la ProgressBar
+        this.isOver = false;
     }
 
     initialize() {
@@ -72,10 +73,14 @@ class Questionnaire {
         this.progressBar.update(index, this.$questions.length);
     }
     nextQuestion() {
+        if (!this.validateQuestionAnswered(this._currentQuestionIndex)) {
+            $('#error-message').text('Veuillez sélectionner au moins une réponse.');
+            $('#error-message').slideDown('fast');
+            return true;
+        }
+        $('#error-message').slideUp('fast');
         if (this._currentQuestionIndex < this.$questions.length - 1) {
-            if (!this.validateQuestionAnswered(this._currentQuestionIndex)) {
-                return;
-            }
+            
             this.showQuestion(this._currentQuestionIndex + 1);
             return true;
         }
